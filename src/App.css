@@ -1,38 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
 .App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #4a5568;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  color: #718096;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.url-form {
+  margin-bottom: 30px;
+}
+
+.input-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+button {
+  padding: 15px 25px;
+  background: #667eea;
   color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover:not(:disabled) {
+  background: #5a6fd8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #fc8181;
+}
+
+.result {
+  background: #f7fafc;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px dashed #cbd5e0;
+}
+
+.result p {
+  margin-bottom: 10px;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.short-url {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.2rem;
+  word-break: break-all;
+  cursor: pointer;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.short-url:hover {
+  background: #f0f4ff;
+  border-color: #667eea;
+}
+
+.result small {
+  color: #718096;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.short-url-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.short-url {
+  flex: 1;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.1rem;
+  word-break: break-all;
+  cursor: pointer;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.short-url:hover {
+  background: #f0f4ff;
+  border-color: #667eea;
+}
+
+.copy-btn {
+  padding: 12px 20px;
+  background: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.copy-btn:hover {
+  background: #38a169;
+}
+
+@media (max-width: 768px) {
+  .short-url-container {
+    flex-direction: column;
+  }
+  
+  .copy-btn {
+    width: 100%;
   }
 }
