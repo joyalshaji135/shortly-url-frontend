@@ -37,7 +37,7 @@ const handleShortUrlClick = () => {
       let urlToOpen = shortUrl;
       if (shortUrl.startsWith('https://joyalshaji.com') && process.env.NODE_ENV === 'development') {
         // Replace with local backend for testing
-        urlToOpen = shortUrl.replace('https://joyalshaji.com', 'http://localhost:5000');
+        urlToOpen = shortUrl.replace('https://joyalshaji.com', 'https://shortly-url-backend.onrender.com');
       }
       window.open(urlToOpen, '_blank');
     }
