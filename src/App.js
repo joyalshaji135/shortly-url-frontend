@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 // Use environment variable or default to localhost for development
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_BASE = process.env.REACT_APP_API_URL;
 
 function App() {
   const [originalUrl, setOriginalUrl] = useState('');
@@ -31,9 +31,15 @@ function App() {
     }
   };
 
-  const handleShortUrlClick = () => {
+const handleShortUrlClick = () => {
     if (shortUrl) {
-      window.open(shortUrl, '_blank');
+      // For local development, ensure the URL is properly formatted
+      let urlToOpen = shortUrl;
+      if (shortUrl.startsWith('https://sree.com') && process.env.NODE_ENV === 'development') {
+        // Replace with local backend for testing
+        urlToOpen = shortUrl.replace('https://sree.com', 'http://localhost:5000');
+      }
+      window.open(urlToOpen, '_blank');
     }
   };
 
