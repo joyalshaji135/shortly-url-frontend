@@ -35,9 +35,9 @@ const handleShortUrlClick = () => {
     if (shortUrl) {
       // For local development, ensure the URL is properly formatted
       let urlToOpen = shortUrl;
-      if (shortUrl.startsWith('https://sree.com') && process.env.NODE_ENV === 'development') {
+      if (shortUrl.startsWith('https://joyalshaji.com') && process.env.NODE_ENV === 'development') {
         // Replace with local backend for testing
-        urlToOpen = shortUrl.replace('https://sree.com', 'http://localhost:5000');
+        urlToOpen = shortUrl.replace('https://joyalshaji.com', 'http://localhost:5000');
       }
       window.open(urlToOpen, '_blank');
     }
